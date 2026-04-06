@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Finance Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main-container">
+    <div class="sidebar">
+        <div class="logo">
+            <img src="assets/logo.png" class="sidebar-logo">
+            <h2>Zorvyn Finance</h2>
+        </div>
+        <ul>
+            <li class="active" onclick="showSection('dashboard')">Dashboard</li>
+            <li onclick="showSection('transactions')">Transactions</li>
+            <li onclick="showSection('insights')">Insights</li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="header">
+            <h1>FINANCE DASHBOARD</h1>
+            <div class="header-right">
+                <button id="addBtn" style="display: none;">+ Add Transaction</button>
+                <select id="role">
+                    <option value="viewer">Viewer</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+        </div>
+        <div id="dashboardSection">
+        <div class="cards">
+            <div class="card" id="balance">Balance: 0</div>
+            <div class="card" id="income">Income: 0</div>
+            <div class="card" id="expense">Expense: 0</div>
+        </div>
+            <div class="chart-row">
+            <div class="chart-box">
+                <h3 class="chart-title">Transaction Trend</h3>
+                <canvas id="lineChart"></canvas>
+            </div>  
+            <div class="chart-box">
+                <h3 class="chart-title">Spending by category</h3>
+                <canvas id="pieChart"></canvas>
+            </div>
+        </div>
+        </div>
+        <div id="transactionsSection">
+        <input type="text" id="search" placeholder="Search transactions....">
+        <table id="transactions">
+            <tr>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Type</th>
+            </tr>
+        </table>
+        </div>
+        <div id="insightsSection">
+        <div class="cards">
+            <div class="card" id="insights"></div>
+            <div class="card" id="extraInsight1"></div>
+            <div class="card" id="extraInsight2"></div>
+        </div>
+    </div>
+    </div>
+</div>
+<script src="data.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+    
+</body>
+</html>
